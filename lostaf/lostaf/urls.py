@@ -1,5 +1,13 @@
-from django.urls import path, include  # 👈 Asegúrate de tener include
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
+  #  Asegúrate de tener include
 
 urlpatterns = [
-    path('', include('movie.urls')),  # ✅ Esto es lo único que debe quedarse aquí
+    path('admin/', admin.site.urls), 
+    path('', include('movie.urls')),  # Esto es lo único que debe quedarse aquí
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
