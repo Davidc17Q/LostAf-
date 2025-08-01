@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from .models import Movie
 
 def home(request):
-    context = {'name': 'David Quintero'}
-    return render(request, 'home.html', context)
-def about(request):
-    return render(request, 'about.html')
+    searchTerm = request.GET.get('searchMovie')
+    if searchTerm:
+        movies = Movie.objects.filter(title__icontains=searchTerm)
+    else:
+        movies = Movie.objects.all()
+    return render(request, 'home.html', {'name': 'David Quintero', 'movies': movies})
