@@ -13,8 +13,8 @@ Este es un proyecto hecho con Django para gestionar y visualizar una base de dat
 
 ## Superusuario
 
-- Usuario: **admin**
-- Contraseña: *(La que configuraste)*
+- Usuario: davidadmin
+- Contraseña:
 
 ## Autor
 
