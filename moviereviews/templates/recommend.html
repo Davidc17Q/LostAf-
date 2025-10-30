@@ -1,0 +1,8 @@
+<h1>Recommended Movie</h1>
+
+{% if recommended %}
+  <p><strong>{{ recommended.0.title }}</strong></p>
+  <p>Similarity: {{ recommended.1 }}</p>
+{% else %}
+  <p>No recommendation yet. Try entering a prompt!</p>
+{% endif %}
